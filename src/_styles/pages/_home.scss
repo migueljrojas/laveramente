@@ -1,13 +1,132 @@
 .home {
+    overflow: hidden;
+
     &__container {
         width: 100%;
         position: relative;
+        margin-bottom: 40px;
+
+        @include mq(md) {
+            height: 85vh;
+            margin-bottom: 0;
+        }
     }
 
     &__main-logo {
-        width: 
-        img  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+
+        @include mq(md) {
 
         }
+
+        img  {
+            height: auto;
+            margin-bottom: 10px;
+            
+            @include mq(md) {
+                width: 5%;
+            }
+        }
+    }
+
+    &__group {
+        span {
+            display: inline-block;
+            color: $green;
+            font-family: $logoFont;
+            font-weight: 700;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        text-align: center;
+        font-weight: 700;
+        font-size: 40px;
+        font-family: $mainFont;
+        
+        @include mq(md) {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 80px;
+            width: 55%;
+        }
+    }
+
+    &__line {
+        width: 1px;
+        background: $black;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        height: 50px;
+        margin-bottom: 40px;
+        
+        @include mq(md) {
+            height: 100px;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        @include trans;
+
+        position: relative;
+        width: 30%;
+        opacity: 0;
+        transform: translateY(200%);
+        animation:logo 1s $easing forwards;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(md) {
+            width: 8%;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            
+            &:hover {
+                animation:rot 0.3s $easing forwards;
+
+            }
+        }
+
+        &:hover {
+        }
+    }
+}
+
+@keyframes rot{
+    50%{transform:rotateY(90deg) scale3d(1.2, 1.2, 1.2); opacity: 1;}
+    100%{transform:rotateY(0deg) scale3d(1.2, 1.2, 1.2); opacity: 1;}
+}
+
+@keyframes logo{
+    0% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+
+    // 50% {
+    //     transform: translateY(-50%);
+    //     opacity: .5;
+    // }
+    
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    
     }
 }

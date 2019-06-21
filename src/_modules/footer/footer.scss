@@ -1,3 +1,29 @@
 .footer {
+    background: $black;
     
+    &__container  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+
+        @include mq(md) {
+            height: 15vh;
+            flex-direction: row;
+            padding: 0;
+        }
+    }
+
+    &__mail {
+        display: block;
+        text-decoration: none;
+        color: $darkGray;
+        display: flex;
+        align-items: center;
+
+        p {
+            margin: 0;
+        }
+    }
 }
